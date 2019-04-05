@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		822F8A32F57CF20E89389D65 /* Pods_fayes_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */; };
+		B8264A672257C52F00C4C48E /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A662257C52F00C4C48E /* dataModel.swift */; };
+		B8264A6E2257C56300C4C48E /* cameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A682257C56300C4C48E /* cameraView.swift */; };
+		B8264A6F2257C56300C4C48E /* cameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8264A692257C56300C4C48E /* cameraView.xib */; };
+		B8264A702257C56300C4C48E /* dataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8264A6A2257C56300C4C48E /* dataView.xib */; };
+		B8264A712257C56300C4C48E /* dataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A6B2257C56300C4C48E /* dataView.swift */; };
+		B8264A722257C56300C4C48E /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A6C2257C56300C4C48E /* settingsView.swift */; };
+		B8264A732257C56300C4C48E /* settingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8264A6D2257C56300C4C48E /* settingsView.xib */; };
+		B8264A752257C5DC00C4C48E /* Visage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A742257C5DC00C4C48E /* Visage.swift */; };
 		B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */; };
 		B8D3E4392257B5FF00D0B7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */; };
 		B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */; };
@@ -16,6 +24,14 @@
 
 /* Begin PBXFileReference section */
 		7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fayes_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8264A662257C52F00C4C48E /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
+		B8264A682257C56300C4C48E /* cameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraView.swift; sourceTree = "<group>"; };
+		B8264A692257C56300C4C48E /* cameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cameraView.xib; sourceTree = "<group>"; };
+		B8264A6A2257C56300C4C48E /* dataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dataView.xib; sourceTree = "<group>"; };
+		B8264A6B2257C56300C4C48E /* dataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataView.swift; sourceTree = "<group>"; };
+		B8264A6C2257C56300C4C48E /* settingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
+		B8264A6D2257C56300C4C48E /* settingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = settingsView.xib; sourceTree = "<group>"; };
+		B8264A742257C5DC00C4C48E /* Visage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visage.swift; sourceTree = "<group>"; };
 		B8D3E4332257B5FF00D0B7F6 /* fayes-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fayes-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +114,7 @@
 		B8D3E44A2257B69300D0B7F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B8264A662257C52F00C4C48E /* dataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +122,7 @@
 		B8D3E44B2257B69A00D0B7F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B8264A742257C5DC00C4C48E /* Visage.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -120,6 +138,12 @@
 		B8D3E44D2257B6B300D0B7F6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B8264A682257C56300C4C48E /* cameraView.swift */,
+				B8264A692257C56300C4C48E /* cameraView.xib */,
+				B8264A6B2257C56300C4C48E /* dataView.swift */,
+				B8264A6A2257C56300C4C48E /* dataView.xib */,
+				B8264A6C2257C56300C4C48E /* settingsView.swift */,
+				B8264A6D2257C56300C4C48E /* settingsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,7 +154,6 @@
 				D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */,
 				E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,6 +219,9 @@
 			files = (
 				B8D3E44F2257B72500D0B7F6 /* LaunchImage.xib in Resources */,
 				B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */,
+				B8264A732257C56300C4C48E /* settingsView.xib in Resources */,
+				B8264A702257C56300C4C48E /* dataView.xib in Resources */,
+				B8264A6F2257C56300C4C48E /* cameraView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +289,11 @@
 			files = (
 				B8D3E4392257B5FF00D0B7F6 /* ViewController.swift in Sources */,
 				B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */,
+				B8264A712257C56300C4C48E /* dataView.swift in Sources */,
+				B8264A722257C56300C4C48E /* settingsView.swift in Sources */,
+				B8264A672257C52F00C4C48E /* dataModel.swift in Sources */,
+				B8264A6E2257C56300C4C48E /* cameraView.swift in Sources */,
+				B8264A752257C5DC00C4C48E /* Visage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,8 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchImage</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access is required in order to scan facial features</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
