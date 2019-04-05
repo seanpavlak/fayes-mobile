@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822F8A32F57CF20E89389D65 /* Pods_fayes_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */; };
 		B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */; };
 		B8D3E4392257B5FF00D0B7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */; };
 		B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */; };
@@ -14,12 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fayes_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D3E4332257B5FF00D0B7F6 /* fayes-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fayes-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8D3E4422257B60000D0B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchImage.xib; sourceTree = "<group>"; };
+		D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.debug.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.release.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822F8A32F57CF20E89389D65 /* Pods_fayes_mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AB2E3759E79487DF3562594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8D3E42A2257B5FF00D0B7F6 = {
 			isa = PBXGroup;
 			children = (
 				B8D3E4352257B5FF00D0B7F6 /* fayes-mobile */,
 				B8D3E4342257B5FF00D0B7F6 /* Products */,
+				C892B7867382876B5B0D8912 /* Pods */,
+				7AB2E3759E79487DF3562594 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +124,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C892B7867382876B5B0D8912 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */,
+				E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8D3E4452257B60000D0B7F6 /* Build configuration list for PBXNativeTarget "fayes-mobile" */;
 			buildPhases = (
+				1D42D580180C8120F671DF92 /* [CP] Check Pods Manifest.lock */,
 				B8D3E42F2257B5FF00D0B7F6 /* Sources */,
 				B8D3E4302257B5FF00D0B7F6 /* Frameworks */,
 				B8D3E4312257B5FF00D0B7F6 /* Resources */,
+				C805A5FBA1872FA438F51312 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +200,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D42D580180C8120F671DF92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fayes-mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C805A5FBA1872FA438F51312 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AloeStackView/AloeStackView.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AloeStackView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B8D3E42F2257B5FF00D0B7F6 /* Sources */ = {
@@ -305,6 +387,7 @@
 		};
 		B8D3E4462257B60000D0B7F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -324,6 +407,7 @@
 		};
 		B8D3E4472257B60000D0B7F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

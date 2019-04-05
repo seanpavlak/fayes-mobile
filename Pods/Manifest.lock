@@ -1,0 +1,44 @@
+PODS:
+  - AloeStackView (1.0.1)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Device (3.1.2)
+  - KeychainSwift (14.0.0)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+
+DEPENDENCIES:
+  - AloeStackView
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Device
+  - KeychainSwift
+  - NVActivityIndicatorView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AloeStackView
+    - Device
+    - KeychainSwift
+    - NVActivityIndicatorView
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  AloeStackView: d22c006da4510db5e220968234174654b5ed6ea5
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Device: 62242076214c30fb5760174b3601cefafa70a481
+  KeychainSwift: d3cce449feb5198907aa3c50ae7409fdbd9d3e20
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+
+PODFILE CHECKSUM: 63712126543785963850de7d3de28680f0400efa
+
+COCOAPODS: 1.6.0.beta.1
