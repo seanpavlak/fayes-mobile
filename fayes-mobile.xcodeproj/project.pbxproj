@@ -9,19 +9,17 @@
 /* Begin PBXBuildFile section */
 		B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */; };
 		B8D3E4392257B5FF00D0B7F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */; };
-		B8D3E43C2257B5FF00D0B7F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43A2257B5FF00D0B7F6 /* Main.storyboard */; };
 		B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */; };
-		B8D3E4412257B60000D0B7F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43F2257B60000D0B7F6 /* LaunchScreen.storyboard */; };
+		B8D3E44F2257B72500D0B7F6 /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B8D3E4332257B5FF00D0B7F6 /* fayes-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fayes-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B8D3E43B2257B5FF00D0B7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8D3E4402257B60000D0B7F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8D3E4422257B60000D0B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchImage.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +53,60 @@
 			isa = PBXGroup;
 			children = (
 				B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */,
-				B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */,
-				B8D3E43A2257B5FF00D0B7F6 /* Main.storyboard */,
-				B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */,
-				B8D3E43F2257B60000D0B7F6 /* LaunchScreen.storyboard */,
 				B8D3E4422257B60000D0B7F6 /* Info.plist */,
+				B8D3E4482257B67B00D0B7F6 /* Assets */,
+				B8D3E4492257B68600D0B7F6 /* Extensions */,
+				B8D3E44A2257B69300D0B7F6 /* Models */,
+				B8D3E44B2257B69A00D0B7F6 /* Utilities */,
+				B8D3E44C2257B6A600D0B7F6 /* ViewControllers */,
+				B8D3E44D2257B6B300D0B7F6 /* Views */,
 			);
 			path = "fayes-mobile";
+			sourceTree = "<group>";
+		};
+		B8D3E4482257B67B00D0B7F6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */,
+				B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B8D3E4492257B68600D0B7F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B8D3E44A2257B69300D0B7F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B8D3E44B2257B69A00D0B7F6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B8D3E44C2257B6A600D0B7F6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8D3E4382257B5FF00D0B7F6 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B8D3E44D2257B6B300D0B7F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8D3E4412257B60000D0B7F6 /* LaunchScreen.storyboard in Resources */,
+				B8D3E44F2257B72500D0B7F6 /* LaunchImage.xib in Resources */,
 				B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */,
-				B8D3E43C2257B5FF00D0B7F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,25 +185,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B8D3E43A2257B5FF00D0B7F6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8D3E43B2257B5FF00D0B7F6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B8D3E43F2257B60000D0B7F6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8D3E4402257B60000D0B7F6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B8D3E4432257B60000D0B7F6 /* Debug */ = {
@@ -285,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLT9N6BJR8;
 				INFOPLIST_FILE = "fayes-mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team.fayes-mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GLT9N6BJR8;
 				INFOPLIST_FILE = "fayes-mobile/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +337,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.team.fayes-mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
