@@ -18,8 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
 
-        let viewController = ViewController()
-        self.window!.rootViewController = viewController
+        UINavigationBar.appearance().backgroundColor = UIColor.flatWhite
+
+        let navigationController = UINavigationController()
+        let captureViewController =  CaptureViewController()
+        navigationController.viewControllers = [captureViewController]
+        self.window!.rootViewController = navigationController
 
         return true
     }
