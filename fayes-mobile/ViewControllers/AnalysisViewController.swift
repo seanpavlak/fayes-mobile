@@ -58,8 +58,12 @@ public class AnalysisViewController: AloeStackViewController {
     private func setupRows() {
         setupSpacerView(ofHeight: 18.0)
         
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-masculine"), color: .flatPowderBlueDark, value: "Masculine Percentage", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-feminine"), color: .flatPink, value: "Feminine Percentage", subValue: "0.0", isLast: true)
+        setupEmojiView()
+        
+        setupSpacerView(ofHeight: 18.0)
+
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-masculine"), color: .flatPowderBlueDark, value: "Masculine Percentage", subValue: "0.0%")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-feminine"), color: .flatPink, value: "Feminine Percentage", subValue: "0.0%", isLast: true)
 
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE"), color: .flatRed, value: "LERE Distance", subValue: "0.0")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM"), color: .flatOrange, value: "LEM Distance", subValue: "0.0")
@@ -70,6 +74,35 @@ public class AnalysisViewController: AloeStackViewController {
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_REM"), color: .flatMint, value: "LEM - REM Ratio", subValue: "0.0")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_CEM"), color: .flatBlue, value: "LEM - CEM Ratio", subValue: "0.0")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM_CEM"), color: .flatPurpleDark, value: "REM - CEM Ratio", subValue: "0.0", isLast: true)
+    }
+    
+    private func setupEmojiView() {
+        let containerView: UIView = {
+            let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            
+            return view
+        }()
+        
+        let emojiLabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            
+            label.font = UIFont.systemFont(ofSize: 48.0)
+            label.numberOfLines = 1
+            label.textAlignment = .center
+            label.text = "👦🏽 👧🏽"
+            
+            return label
+        }()
+        
+        containerView.addSubview(emojiLabel)
+        emojiLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0.0).isActive = true
+        emojiLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0.0).isActive = true
+        emojiLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0.0).isActive = true
+        emojiLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0.0).isActive = true
+        
+        stackView.addRow(containerView)
     }
     
     private func setupNavigationRow(icon: UIImage, color: UIColor? = nil, value: String, subValue: String? = nil, isNavigator: Bool = false, isLast: Bool = false, isFinal: Bool = false, completion: (() -> Void)? = {}) {
