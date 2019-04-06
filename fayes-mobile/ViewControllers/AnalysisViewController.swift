@@ -35,7 +35,7 @@ public class AnalysisViewController: AloeStackViewController {
     private func setupSelf() {
         definesPresentationContext = true
         
-        title = "Settings"
+        title = "Analysis"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         view.backgroundColor = UIColor("#EFEFF4")
@@ -58,18 +58,18 @@ public class AnalysisViewController: AloeStackViewController {
     private func setupRows() {
         setupSpacerView(ofHeight: 18.0)
         
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "LERE Distance", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "LEM Distance", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "REM Distance", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "CEM Distance", subValue: "0.0", isLast: true)
-        
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "LERE - CEM Ratio", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "LEM - REM Ratio", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "LEM - CEM Ratio", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "REM - CEM Ratio", subValue: "0.0", isLast: true)
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-masculine"), color: .flatPowderBlueDark, value: "Masculine Percentage", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-feminine"), color: .flatPink, value: "Feminine Percentage", subValue: "0.0", isLast: true)
 
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "Masculine Percentage", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "material-help"), color: .flatGreen, value: "Feminine Percentage", subValue: "0.0", isLast: true)
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE"), color: .flatRed, value: "LERE Distance", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM"), color: .flatOrange, value: "LEM Distance", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM"), color: .flatYellow, value: "REM Distance", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-CEM"), color: .flatLime, value: "CEM Distance", subValue: "0.0", isLast: true)
+        
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE_CEM"), color: .flatGreen, value: "LERE - CEM Ratio", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_REM"), color: .flatMint, value: "LEM - REM Ratio", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_CEM"), color: .flatBlue, value: "LEM - CEM Ratio", subValue: "0.0")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM_CEM"), color: .flatPurpleDark, value: "REM - CEM Ratio", subValue: "0.0", isLast: true)
     }
     
     private func setupNavigationRow(icon: UIImage, color: UIColor? = nil, value: String, subValue: String? = nil, isNavigator: Bool = false, isLast: Bool = false, isFinal: Bool = false, completion: (() -> Void)? = {}) {
