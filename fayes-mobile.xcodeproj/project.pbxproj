@@ -15,6 +15,15 @@
 		B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */; };
 		B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */; };
 		B8D3E44F2257B72500D0B7F6 /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */; };
+		B8EF4D1E22582CF200F43166 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D1D22582CF200F43166 /* SettingsViewController.swift */; };
+		B8EF4D2022582E2600F43166 /* String+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D1F22582E2600F43166 /* String+Color.swift */; };
+		B8EF4D2222582E5600F43166 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2122582E5600F43166 /* WebViewController.swift */; };
+		B8EF4D2422582EB800F43166 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2322582EB800F43166 /* UIColor+Hex.swift */; };
+		B8EF4D2622582FE100F43166 /* DeviceInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2522582FE100F43166 /* DeviceInformation.swift */; };
+		B8EF4D28225830A700F43166 /* Int+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D27225830A700F43166 /* Int+Color.swift */; };
+		B8EF4D2A225830CB00F43166 /* StringProtocol+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */; };
+		B8EF4D2C225830D600F43166 /* Character+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2B225830D600F43166 /* Character+ASCII.swift */; };
+		B8EF4D2E225830EC00F43166 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2D225830EC00F43166 /* String+Substring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8D3E4422257B60000D0B7F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchImage.xib; sourceTree = "<group>"; };
+		B8EF4D1D22582CF200F43166 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B8EF4D1F22582E2600F43166 /* String+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Color.swift"; sourceTree = "<group>"; };
+		B8EF4D2122582E5600F43166 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B8EF4D2322582EB800F43166 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		B8EF4D2522582FE100F43166 /* DeviceInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInformation.swift; sourceTree = "<group>"; };
+		B8EF4D27225830A700F43166 /* Int+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Color.swift"; sourceTree = "<group>"; };
+		B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringProtocol+ASCII.swift"; sourceTree = "<group>"; };
+		B8EF4D2B225830D600F43166 /* Character+ASCII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+ASCII.swift"; sourceTree = "<group>"; };
+		B8EF4D2D225830EC00F43166 /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.debug.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.release.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */,
+				B8EF4D2322582EB800F43166 /* UIColor+Hex.swift */,
+				B8EF4D1F22582E2600F43166 /* String+Color.swift */,
+				B8EF4D2D225830EC00F43166 /* String+Substring.swift */,
+				B8EF4D27225830A700F43166 /* Int+Color.swift */,
+				B8EF4D2B225830D600F43166 /* Character+ASCII.swift */,
+				B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -114,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */,
+				B8EF4D2522582FE100F43166 /* DeviceInformation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -122,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				B8264A802257DDFF00C4C48E /* CaptureViewController.swift */,
+				B8EF4D1D22582CF200F43166 /* SettingsViewController.swift */,
+				B8EF4D2122582E5600F43166 /* WebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -269,11 +296,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EF4D2E225830EC00F43166 /* String+Substring.swift in Sources */,
+				B8EF4D28225830A700F43166 /* Int+Color.swift in Sources */,
 				B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */,
 				B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */,
 				B8264A672257C52F00C4C48E /* dataModel.swift in Sources */,
+				B8EF4D2422582EB800F43166 /* UIColor+Hex.swift in Sources */,
 				B8264A7D2257DDB000C4C48E /* FaceLandmarksDetector.swift in Sources */,
+				B8EF4D2C225830D600F43166 /* Character+ASCII.swift in Sources */,
+				B8EF4D2022582E2600F43166 /* String+Color.swift in Sources */,
+				B8EF4D2622582FE100F43166 /* DeviceInformation.swift in Sources */,
 				B8264A7F2257DDDF00C4C48E /* UIImage+Scale.swift in Sources */,
+				B8EF4D1E22582CF200F43166 /* SettingsViewController.swift in Sources */,
+				B8EF4D2A225830CB00F43166 /* StringProtocol+ASCII.swift in Sources */,
+				B8EF4D2222582E5600F43166 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

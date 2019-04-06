@@ -111,6 +111,15 @@ class CaptureViewController: UIViewController {
     }
     
     @objc private func settingsButtonTapped(button: UIButton) {
+        let settingsViewController = SettingsViewController()
+        
+        var navigationController = UINavigationController()
+        
+        navigationController = UINavigationController(rootViewController: settingsViewController)
+        navigationController.navigationBar.barTintColor = UIColor.flatWhite
+        navigationController.navigationBar.isTranslucent = false
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 

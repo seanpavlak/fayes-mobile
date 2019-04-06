@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         UINavigationBar.appearance().backgroundColor = UIColor.flatWhite
+        UINavigationBar.appearance().tintColor = UIColor.flatBlack
 
         let navigationController = UINavigationController()
         let captureViewController =  CaptureViewController()
