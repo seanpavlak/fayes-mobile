@@ -115,13 +115,13 @@
 		B8D3E4492257B68600D0B7F6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */,
-				B8EF4D2322582EB800F43166 /* UIColor+Hex.swift */,
+				B8EF4D2B225830D600F43166 /* Character+ASCII.swift */,
+				B8EF4D27225830A700F43166 /* Int+Color.swift */,
 				B8EF4D1F22582E2600F43166 /* String+Color.swift */,
 				B8EF4D2D225830EC00F43166 /* String+Substring.swift */,
-				B8EF4D27225830A700F43166 /* Int+Color.swift */,
-				B8EF4D2B225830D600F43166 /* Character+ASCII.swift */,
 				B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */,
+				B8EF4D2322582EB800F43166 /* UIColor+Hex.swift */,
+				B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -137,8 +137,8 @@
 		B8D3E44B2257B69A00D0B7F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */,
 				B8EF4D2522582FE100F43166 /* DeviceInformation.swift */,
+				B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
