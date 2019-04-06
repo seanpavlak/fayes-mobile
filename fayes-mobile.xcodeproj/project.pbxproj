@@ -24,6 +24,9 @@
 		B8EF4D2A225830CB00F43166 /* StringProtocol+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */; };
 		B8EF4D2C225830D600F43166 /* Character+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2B225830D600F43166 /* Character+ASCII.swift */; };
 		B8EF4D2E225830EC00F43166 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2D225830EC00F43166 /* String+Substring.swift */; };
+		B8EF4D3022583A0500F43166 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2F22583A0500F43166 /* AnalysisViewController.swift */; };
+		B8EF4D3222583E6B00F43166 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D3122583E6B00F43166 /* Distance.swift */; };
+		B8EF4D3422583F2600F43166 /* TrainingValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D3322583F2600F43166 /* TrainingValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StringProtocol+ASCII.swift"; sourceTree = "<group>"; };
 		B8EF4D2B225830D600F43166 /* Character+ASCII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+ASCII.swift"; sourceTree = "<group>"; };
 		B8EF4D2D225830EC00F43166 /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
+		B8EF4D2F22583A0500F43166 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		B8EF4D3122583E6B00F43166 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
+		B8EF4D3322583F2600F43166 /* TrainingValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingValues.swift; sourceTree = "<group>"; };
 		D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.debug.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.release.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,8 +143,10 @@
 		B8D3E44B2257B69A00D0B7F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B8EF4D3122583E6B00F43166 /* Distance.swift */,
 				B8EF4D2522582FE100F43166 /* DeviceInformation.swift */,
 				B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */,
+				B8EF4D3322583F2600F43166 /* TrainingValues.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 		B8D3E44C2257B6A600D0B7F6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B8EF4D2F22583A0500F43166 /* AnalysisViewController.swift */,
 				B8264A802257DDFF00C4C48E /* CaptureViewController.swift */,
 				B8EF4D1D22582CF200F43166 /* SettingsViewController.swift */,
 				B8EF4D2122582E5600F43166 /* WebViewController.swift */,
@@ -300,9 +309,11 @@
 				B8EF4D28225830A700F43166 /* Int+Color.swift in Sources */,
 				B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */,
 				B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */,
+				B8EF4D3222583E6B00F43166 /* Distance.swift in Sources */,
 				B8264A672257C52F00C4C48E /* dataModel.swift in Sources */,
 				B8EF4D2422582EB800F43166 /* UIColor+Hex.swift in Sources */,
 				B8264A7D2257DDB000C4C48E /* FaceLandmarksDetector.swift in Sources */,
+				B8EF4D3422583F2600F43166 /* TrainingValues.swift in Sources */,
 				B8EF4D2C225830D600F43166 /* Character+ASCII.swift in Sources */,
 				B8EF4D2022582E2600F43166 /* String+Color.swift in Sources */,
 				B8EF4D2622582FE100F43166 /* DeviceInformation.swift in Sources */,
@@ -310,6 +321,7 @@
 				B8EF4D1E22582CF200F43166 /* SettingsViewController.swift in Sources */,
 				B8EF4D2A225830CB00F43166 /* StringProtocol+ASCII.swift in Sources */,
 				B8EF4D2222582E5600F43166 /* WebViewController.swift in Sources */,
+				B8EF4D3022583A0500F43166 /* AnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
