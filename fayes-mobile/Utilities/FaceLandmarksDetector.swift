@@ -1,9 +1,6 @@
 //
 //  FaceLandmarksDetector.swift
-//  DetectFaceLandmarks
-//
 //  Created by mathieu on 09/07/2017.
-//  Copyright © 2017 mathieu. All rights reserved.
 //
 
 import UIKit
