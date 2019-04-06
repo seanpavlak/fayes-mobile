@@ -84,24 +84,45 @@ public class AnalysisViewController: AloeStackViewController {
             return view
         }()
         
-        let emojiLabel: UILabel = {
+        let masculineEmojiLabel: UILabel = {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             
-            label.font = UIFont.systemFont(ofSize: 48.0)
+            label.font = UIFont.systemFont(ofSize: 60.0)
             label.numberOfLines = 1
-            label.textAlignment = .center
-            label.text = "👦🏽 👧🏽"
-            
+            label.textAlignment = .right
+            label.text = "👦🏽"
+            label.alpha = 0.33
+
             return label
         }()
         
-        containerView.addSubview(emojiLabel)
-        emojiLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0.0).isActive = true
-        emojiLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0.0).isActive = true
-        emojiLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0.0).isActive = true
-        emojiLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0.0).isActive = true
+        let feminineEmojiLabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            
+            label.font = UIFont.systemFont(ofSize: 60.0)
+            label.numberOfLines = 1
+            label.textAlignment = .left
+            label.text = "👧🏽"
+            label.alpha = 0.33
+            
+            return label
+        }()
+
         
+        containerView.addSubview(masculineEmojiLabel)
+        masculineEmojiLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0.0).isActive = true
+        masculineEmojiLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0.0).isActive = true
+        masculineEmojiLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0.0).isActive = true
+        masculineEmojiLabel.trailingAnchor.constraint(equalTo: containerView.centerXAnchor, constant: -6.0).isActive = true
+        
+        containerView.addSubview(feminineEmojiLabel)
+        feminineEmojiLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0.0).isActive = true
+        feminineEmojiLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0.0).isActive = true
+        feminineEmojiLabel.leadingAnchor.constraint(equalTo: containerView.centerXAnchor, constant: 6.0).isActive = true
+        feminineEmojiLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0.0).isActive = true
+
         stackView.addRow(containerView)
     }
     
