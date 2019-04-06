@@ -1,9 +1,6 @@
 //
 //  UIImage+Scale.swift
-//  AICamera
-//
-//  Created by mathieu on 08/06/2017.
-//  Copyright © 2017 mathieu. All rights reserved.
+//  Created by Sean Pavlak on 04/05/19.
 //
 
 import UIKit

@@ -1,9 +1,6 @@
 //
 //  DeviceInformation.swift
-//  rdn-mobile
-//
-//  Created by Sean Pavlak on 10/10/18.
-//  Copyright © 2018 Reliability Data Network. All rights reserved.
+//  Created by Sean Pavlak on 04/05/19.
 //
 
 import Foundation

@@ -1,9 +1,6 @@
 //
 //  CaptureViewController.swift
-//  fayes-mobile
-//
-//  Created by Sean Pavlak on 4/5/19.
-//  Copyright © 2019 Kaldr Industries. All rights reserved.
+//  Created by Sean Pavlak on 04/05/19.
 //
 
 import UIKit
