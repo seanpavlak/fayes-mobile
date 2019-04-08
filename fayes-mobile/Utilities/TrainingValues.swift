@@ -6,11 +6,11 @@
 //  Copyright © 2019 Kaldr Industries. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct NBTrainingData {
-    struct LERE_CEM {
-        static let average: Float = 0.882389848
+    struct LereCem {
+        static let average: CGFloat = 0.882389848
 
         struct Masculine {
             static let above: Float = 19/50
@@ -23,8 +23,8 @@ struct NBTrainingData {
         }
     }
     
-    struct LEM_REM {
-        static let average: Float = 0.9968473554
+    struct LemRem {
+        static let average: CGFloat = 0.9968473554
 
         struct Masculine {
             static let above: Float = 22/50
@@ -37,8 +37,8 @@ struct NBTrainingData {
         }
     }
     
-    struct LEM_CEM {
-        static let average: Float = 1.078119427
+    struct LemCem {
+        static let average: CGFloat = 1.078119427
 
         struct Masculine {
             static let above: Float = 26/50
@@ -51,8 +51,8 @@ struct NBTrainingData {
         }
     }
     
-    struct REM_CEM {
-        static let average: Float = 1.081694334
+    struct RemCem {
+        static let average: CGFloat = 1.081694334
 
         struct Masculine {
             static let above: Float = 28/50

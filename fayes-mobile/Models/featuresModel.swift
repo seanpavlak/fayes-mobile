@@ -21,6 +21,11 @@ struct features {
     var lemRemRatio: CGFloat?
     var lemCemRatio: CGFloat?
     var remCemRatio: CGFloat?
+    
+    var lereCemRatioAbove: Bool?
+    var lemRemRatioAbove: Bool?
+    var lemCemRatioAbove: Bool?
+    var remCemRatioAbove: Bool?
 
     var malePercentage: Float = 0.0
     var femalePercentage: Float = 0.0

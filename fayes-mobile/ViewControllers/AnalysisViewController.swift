@@ -36,9 +36,8 @@ public class AnalysisViewController: AloeStackViewController {
     
     private func setupFeaturesModel() {
         getFeatureDistance()
-        getFeatureRatios()
-        
-        print(features)
+        getFeatureRatio()
+        getFeatureComparison()
     }
     
     private func getFeatureDistance() {
@@ -53,7 +52,7 @@ public class AnalysisViewController: AloeStackViewController {
         features?.cemDistance = centerEyePoint.distance(to: mouthPoint)
     }
     
-    private func getFeatureRatios() {
+    private func getFeatureRatio() {
         guard let lereDistance = features?.lereDistance else { return }
         guard let lemDistance = features?.lemDistance else { return }
         guard let remDistance = features?.remDistance else { return }
@@ -64,6 +63,19 @@ public class AnalysisViewController: AloeStackViewController {
         features?.lemCemRatio = lemDistance/cemDistance
         features?.remCemRatio = remDistance/cemDistance
     }
+    
+    private func getFeatureComparison() {
+        guard let lereCemRatio = features?.lereCemRatio else { return }
+        guard let lemRemRatio = features?.lemRemRatio else { return }
+        guard let lemCemRatio = features?.lemCemRatio else { return }
+        guard let remCemRatio = features?.remCemRatio else { return }
+        
+        features?.lereCemRatioAbove = lereCemRatio >= NBTrainingData.LereCem.average
+        features?.lemRemRatioAbove = lemRemRatio >= NBTrainingData.LemRem.average
+        features?.lemCemRatioAbove = lemCemRatio >= NBTrainingData.LemCem.average
+        features?.remCemRatioAbove = remCemRatio >= NBTrainingData.RemCem.average
+    }
+
     
     private func setupSelf() {
         definesPresentationContext = true
