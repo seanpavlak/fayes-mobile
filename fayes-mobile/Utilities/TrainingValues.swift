@@ -10,6 +10,8 @@ import Foundation
 
 struct NBTrainingData {
     struct LERE_CEM {
+        static let average: Float = 0.882389848
+
         struct Masculine {
             static let above: Float = 19/50
             static let below: Float = 31/50
@@ -22,6 +24,8 @@ struct NBTrainingData {
     }
     
     struct LEM_REM {
+        static let average: Float = 0.9968473554
+
         struct Masculine {
             static let above: Float = 22/50
             static let below: Float = 28/50
@@ -34,6 +38,8 @@ struct NBTrainingData {
     }
     
     struct LEM_CEM {
+        static let average: Float = 1.078119427
+
         struct Masculine {
             static let above: Float = 26/50
             static let below: Float = 24/50
@@ -46,6 +52,8 @@ struct NBTrainingData {
     }
     
     struct REM_CEM {
+        static let average: Float = 1.081694334
+
         struct Masculine {
             static let above: Float = 28/50
             static let below: Float = 22/50
