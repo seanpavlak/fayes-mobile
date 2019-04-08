@@ -15,9 +15,7 @@ public class AnalysisViewController: AloeStackViewController {
         super.viewDidLoad()
         setupSelf()
         setupStackView()
-        
-        getFeatureDistance()
-        
+        setupFeaturesModel()
         setupRows()
     }
     
@@ -36,8 +34,35 @@ public class AnalysisViewController: AloeStackViewController {
         }
     }
     
-    private func getFeatureDistance() {
+    private func setupFeaturesModel() {
+        getFeatureDistance()
+        getFeatureRatios()
         
+        print(features)
+    }
+    
+    private func getFeatureDistance() {
+        guard let leftEyePoint = features?.leftEyePoint else { return }
+        guard let rightEyePoint = features?.rightEyePoint else { return }
+        guard let centerEyePoint = features?.centerEyePoint else { return }
+        guard let mouthPoint = features?.mouthPoint else { return }
+
+        features?.lereDistance = leftEyePoint.distance(to: rightEyePoint)
+        features?.lemDistance = leftEyePoint.distance(to: mouthPoint)
+        features?.remDistance = rightEyePoint.distance(to: mouthPoint)
+        features?.cemDistance = centerEyePoint.distance(to: mouthPoint)
+    }
+    
+    private func getFeatureRatios() {
+        guard let lereDistance = features?.lereDistance else { return }
+        guard let lemDistance = features?.lemDistance else { return }
+        guard let remDistance = features?.remDistance else { return }
+        guard let cemDistance = features?.cemDistance else { return }
+
+        features?.lereCemRatio = lereDistance/cemDistance
+        features?.lemRemRatio = lemDistance/remDistance
+        features?.lemCemRatio = lemDistance/cemDistance
+        features?.remCemRatio = remDistance/cemDistance
     }
     
     private func setupSelf() {
@@ -73,15 +98,15 @@ public class AnalysisViewController: AloeStackViewController {
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-masculine"), color: .flatPowderBlueDark, value: "Masculine Percentage", subValue: "0.0%")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-feminine"), color: .flatPink, value: "Feminine Percentage", subValue: "0.0%", isLast: true)
 
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE"), color: .flatRed, value: "LERE Distance", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM"), color: .flatOrange, value: "LEM Distance", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM"), color: .flatYellow, value: "REM Distance", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-CEM"), color: .flatLime, value: "CEM Distance", subValue: "0.0", isLast: true)
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE"), color: .flatRed, value: "LERE Distance", subValue: "\(features?.lereDistance?.rounded(to: 2) ?? "0.00") dpi")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM"), color: .flatOrange, value: "LEM Distance", subValue: "\(features?.lemDistance?.rounded(to: 2) ?? "0.00") dpi")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM"), color: .flatYellow, value: "REM Distance", subValue: "\(features?.remDistance?.rounded(to: 2) ?? "0.00") dpi")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-CEM"), color: .flatLime, value: "CEM Distance", subValue: "\(features?.cemDistance?.rounded(to: 2) ?? "0.00") dpi", isLast: true)
         
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE_CEM"), color: .flatGreen, value: "LERE - CEM Ratio", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_REM"), color: .flatMint, value: "LEM - REM Ratio", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_CEM"), color: .flatBlue, value: "LEM - CEM Ratio", subValue: "0.0")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM_CEM"), color: .flatPurpleDark, value: "REM - CEM Ratio", subValue: "0.0", isLast: true)
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE_CEM"), color: .flatGreen, value: "LERE - CEM Ratio", subValue: "\(features?.lereCemRatio?.rounded(to: 3) ?? "0.000")")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_REM"), color: .flatMint, value: "LEM - REM Ratio", subValue: "\(features?.lemRemRatio?.rounded(to: 3) ?? "0.000")")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_CEM"), color: .flatBlue, value: "LEM - CEM Ratio", subValue: "\(features?.lemCemRatio?.rounded(to: 3) ?? "0.000")")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM_CEM"), color: .flatPurpleDark, value: "REM - CEM Ratio", subValue: "\(features?.remCemRatio?.rounded(to: 3) ?? "0.000")", isLast: true)
     }
     
     private func setupEmojiView() {
