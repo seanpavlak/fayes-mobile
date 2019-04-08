@@ -11,6 +11,7 @@ import Vision
 class CaptureViewController: UIViewController {
     let faceDetector = FaceLandmarksDetector()
     let captureSession = AVCaptureSession()
+    var features: features?
 
     let imageView : UIImageView = {
         let imageView = UIImageView()
@@ -36,6 +37,18 @@ class CaptureViewController: UIViewController {
         setupSelf()
         setupViews()
         configureDevice()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+
+        captureSession.stopRunning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        captureSession.startRunning()
     }
     
     override func didReceiveMemoryWarning() {
@@ -106,6 +119,7 @@ class CaptureViewController: UIViewController {
     
     @objc func captureFeatures(_ sender: Any) {
         let analysisViewController = AnalysisViewController()
+        analysisViewController.features = features
         
         var navigationController = UINavigationController()
         
@@ -134,12 +148,12 @@ extension CaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let maxSize = CGSize(width: 1024, height: 1024)
         
         if let image = UIImage(sampleBuffer: sampleBuffer)?.flipped()?.imageWithAspectFit(size: maxSize) {
-            faceDetector.highlightFaces(for: image) { (resultImage) in
+            faceDetector.highlightFaces(for: image) { (resultImage, features) in
                 DispatchQueue.main.async {
                     self.imageView.image = resultImage
+                    self.features = features
                 }
             }
         }
     }
 }
-

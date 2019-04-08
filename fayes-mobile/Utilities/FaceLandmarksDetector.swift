@@ -8,8 +8,10 @@ import Vision
 
 class FaceLandmarksDetector {
 
-    open func highlightFaces(for source: UIImage, complete: @escaping (UIImage) -> Void) {
+    open func highlightFaces(for source: UIImage, complete: @escaping (UIImage, features?) -> Void) {
         var resultImage = source
+        var features: features?
+
         let detectFaceRequest = VNDetectFaceLandmarksRequest { (request, error) in
             if error == nil {
                 if let results = request.results as? [VNFaceObservation] {
@@ -17,19 +19,54 @@ class FaceLandmarksDetector {
                         guard let landmarks = faceObservation.landmarks else {
                             continue
                         }
-                        let boundingRect = faceObservation.boundingBox
-
-                        resultImage = self.drawOnImage(source: resultImage, boundingRect: boundingRect, faceLandmarks: landmarks)
+                        
+                        features = self.getFeaturePoints(from: landmarks, completion: {
+                            let boundingRect = faceObservation.boundingBox
+                            resultImage = self.drawOnImage(source: resultImage, boundingRect: boundingRect, faceLandmarks: landmarks)
+                        })
                     }
                 }
             } else {
                 print(error!.localizedDescription)
             }
-            complete(resultImage)
+            complete(resultImage, features)
         }
 
         let vnImage = VNImageRequestHandler(cgImage: source.cgImage!, options: [:])
         try? vnImage.perform([detectFaceRequest])
+    }
+    
+    private func getFeaturePoints(from landmarks: VNFaceLandmarks2D, completion: (() -> Void)? = {}) -> features? {
+        var landmarkFeatures = features.init()
+        
+        var leftEyePoint: CGPoint?
+        var rightEyePoint: CGPoint?
+        var centerEyePoint: CGPoint?
+        var mouthPoint: CGPoint?
+        
+        if let leftPupil = landmarks.leftPupil {
+            leftEyePoint = leftPupil.normalizedPoints.first
+            landmarkFeatures.leftEyePoint = leftEyePoint
+        }
+        
+        if let rightPupil = landmarks.rightPupil {
+            rightEyePoint = rightPupil.normalizedPoints.first
+            landmarkFeatures.rightEyePoint = rightEyePoint
+        }
+        
+        if let leftEyePoint = leftEyePoint, let rightEyePoint = rightEyePoint {
+            centerEyePoint = leftEyePoint.getMidpoint(between: rightEyePoint)
+            landmarkFeatures.centerEyePoint = centerEyePoint
+        }
+        
+        if let innerLips = landmarks.innerLips {
+            mouthPoint = innerLips.normalizedPoints[1].getMidpoint(between: innerLips.normalizedPoints[4])
+            landmarkFeatures.mouthPoint = mouthPoint
+        }
+        
+        completion!()
+
+        return landmarkFeatures
     }
 
     private func drawOnImage(source: UIImage, boundingRect: CGRect, faceLandmarks: VNFaceLandmarks2D) -> UIImage {

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		822F8A32F57CF20E89389D65 /* Pods_fayes_mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */; };
-		B8264A672257C52F00C4C48E /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A662257C52F00C4C48E /* dataModel.swift */; };
+		B8264A672257C52F00C4C48E /* featuresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A662257C52F00C4C48E /* featuresModel.swift */; };
 		B8264A7D2257DDB000C4C48E /* FaceLandmarksDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */; };
 		B8264A7F2257DDDF00C4C48E /* UIImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */; };
 		B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A802257DDFF00C4C48E /* CaptureViewController.swift */; };
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		7214542063A144D2E471CF04 /* Pods_fayes_mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fayes_mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8264A662257C52F00C4C48E /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
+		B8264A662257C52F00C4C48E /* featuresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = featuresModel.swift; sourceTree = "<group>"; };
 		B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceLandmarksDetector.swift; sourceTree = "<group>"; };
 		B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Scale.swift"; sourceTree = "<group>"; };
 		B8264A802257DDFF00C4C48E /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		B8D3E44A2257B69300D0B7F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B8264A662257C52F00C4C48E /* dataModel.swift */,
+				B8264A662257C52F00C4C48E /* featuresModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 				B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */,
 				B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */,
 				B8EF4D3222583E6B00F43166 /* Distance.swift in Sources */,
-				B8264A672257C52F00C4C48E /* dataModel.swift in Sources */,
+				B8264A672257C52F00C4C48E /* featuresModel.swift in Sources */,
 				B8EF4D2422582EB800F43166 /* UIColor+Hex.swift in Sources */,
 				B8264A7D2257DDB000C4C48E /* FaceLandmarksDetector.swift in Sources */,
 				B8EF4D3422583F2600F43166 /* TrainingValues.swift in Sources */,

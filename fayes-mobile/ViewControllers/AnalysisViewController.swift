@@ -8,12 +8,16 @@ import UIKit
 import ChameleonFramework
 
 public class AnalysisViewController: AloeStackViewController {
+    var features: features?
     var arrangedViews: [UIView] = []
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupSelf()
         setupStackView()
+        
+        getFeatureDistance()
+        
         setupRows()
     }
     
@@ -30,6 +34,10 @@ public class AnalysisViewController: AloeStackViewController {
         if arrangedViews.isEmpty {
             setupRows()
         }
+    }
+    
+    private func getFeatureDistance() {
+        
     }
     
     private func setupSelf() {

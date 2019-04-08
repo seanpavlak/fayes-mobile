@@ -8,6 +8,12 @@
 
 import UIKit
 
-func euclideanDistance(from firstPoint: CGPoint, to secondPoint: CGPoint) -> Float {
-    return Float(sqrt(pow(secondPoint.x-firstPoint.x,2)+pow(secondPoint.y-firstPoint.y,2)))
+extension CGPoint {
+    func distance(to point: CGPoint) -> CGFloat {
+        return sqrt(pow((point.x - x), 2) + pow((point.y - y), 2))
+    }
+    
+    func getMidpoint(between point: CGPoint) -> CGPoint {
+        return CGPoint(x: (point.x + x) / 2, y: (point.y + y) / 2)
+    }
 }
