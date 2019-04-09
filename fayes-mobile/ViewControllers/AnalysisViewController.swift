@@ -193,7 +193,7 @@ public class AnalysisViewController: AloeStackViewController {
             label.numberOfLines = 1
             label.textAlignment = .right
             label.text = "👦🏽"
-            label.alpha = Double(features?.masculineFeaturePercentage ?? 0.0) > Double(features?.feminineFeaturePercentage ?? 0.0) ? 1.00 : 0.33
+            label.alpha = features?.feminineFeaturePercentage.less(than: features?.masculineFeaturePercentage) ?? false ? 1.00 : 0.33
 
             return label
         }()
@@ -206,10 +206,9 @@ public class AnalysisViewController: AloeStackViewController {
             label.numberOfLines = 1
             label.textAlignment = .left
             label.text = "👧🏽"
-            label.alpha = Double(features?.masculineFeaturePercentage ?? 0.0) < Double(features?.feminineFeaturePercentage ?? 0.0) ? 1.00 : 0.33
+            label.alpha = features?.masculineFeaturePercentage.less(than: features?.feminineFeaturePercentage) ?? false ? 1.00 : 0.33
             return label
         }()
-
         
         containerView.addSubview(masculineEmojiLabel)
         masculineEmojiLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0.0).isActive = true

@@ -14,6 +14,8 @@
 		B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A802257DDFF00C4C48E /* CaptureViewController.swift */; };
 		B8C4AECF225B9F4200DF3300 /* CGFloat+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AECE225B9F4200DF3300 /* CGFloat+Rounded.swift */; };
 		B8C4AED1225BE10500DF3300 /* Float+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AED0225BE10500DF3300 /* Float+Rounded.swift */; };
+		B8C4AED3225CC58400DF3300 /* Float+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AED2225CC58400DF3300 /* Float+Operators.swift */; };
+		B8C4AED5225CC5CA00DF3300 /* CGPoint+Midpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AED4225CC5CA00DF3300 /* CGPoint+Midpoint.swift */; };
 		B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */; };
 		B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */; };
 		B8D3E44F2257B72500D0B7F6 /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */; };
@@ -27,7 +29,7 @@
 		B8EF4D2C225830D600F43166 /* Character+ASCII.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2B225830D600F43166 /* Character+ASCII.swift */; };
 		B8EF4D2E225830EC00F43166 /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2D225830EC00F43166 /* String+Substring.swift */; };
 		B8EF4D3022583A0500F43166 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D2F22583A0500F43166 /* AnalysisViewController.swift */; };
-		B8EF4D3222583E6B00F43166 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D3122583E6B00F43166 /* Distance.swift */; };
+		B8EF4D3222583E6B00F43166 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D3122583E6B00F43166 /* CGPoint+Distance.swift */; };
 		B8EF4D3422583F2600F43166 /* TrainingValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EF4D3322583F2600F43166 /* TrainingValues.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		B8264A802257DDFF00C4C48E /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		B8C4AECE225B9F4200DF3300 /* CGFloat+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounded.swift"; sourceTree = "<group>"; };
 		B8C4AED0225BE10500DF3300 /* Float+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounded.swift"; sourceTree = "<group>"; };
+		B8C4AED2225CC58400DF3300 /* Float+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Operators.swift"; sourceTree = "<group>"; };
+		B8C4AED4225CC5CA00DF3300 /* CGPoint+Midpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Midpoint.swift"; sourceTree = "<group>"; };
 		B8D3E4332257B5FF00D0B7F6 /* fayes-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fayes-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		B8EF4D2B225830D600F43166 /* Character+ASCII.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+ASCII.swift"; sourceTree = "<group>"; };
 		B8EF4D2D225830EC00F43166 /* String+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		B8EF4D2F22583A0500F43166 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
-		B8EF4D3122583E6B00F43166 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
+		B8EF4D3122583E6B00F43166 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
 		B8EF4D3322583F2600F43166 /* TrainingValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingValues.swift; sourceTree = "<group>"; };
 		D56830DA8569BCE64036EFBD /* Pods-fayes-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.debug.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		E2868DEFBB4610B67FF89FF6 /* Pods-fayes-mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fayes-mobile.release.xcconfig"; path = "Target Support Files/Pods-fayes-mobile/Pods-fayes-mobile.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +138,9 @@
 				B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */,
 				B8C4AECE225B9F4200DF3300 /* CGFloat+Rounded.swift */,
 				B8C4AED0225BE10500DF3300 /* Float+Rounded.swift */,
+				B8C4AED2225CC58400DF3300 /* Float+Operators.swift */,
+				B8EF4D3122583E6B00F43166 /* CGPoint+Distance.swift */,
+				B8C4AED4225CC5CA00DF3300 /* CGPoint+Midpoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,7 +156,6 @@
 		B8D3E44B2257B69A00D0B7F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B8EF4D3122583E6B00F43166 /* Distance.swift */,
 				B8EF4D2522582FE100F43166 /* DeviceInformation.swift */,
 				B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */,
 				B8EF4D3322583F2600F43166 /* TrainingValues.swift */,
@@ -316,16 +322,18 @@
 				B8EF4D28225830A700F43166 /* Int+Color.swift in Sources */,
 				B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */,
 				B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */,
-				B8EF4D3222583E6B00F43166 /* Distance.swift in Sources */,
+				B8EF4D3222583E6B00F43166 /* CGPoint+Distance.swift in Sources */,
 				B8264A672257C52F00C4C48E /* featuresModel.swift in Sources */,
 				B8EF4D2422582EB800F43166 /* UIColor+Hex.swift in Sources */,
 				B8264A7D2257DDB000C4C48E /* FaceLandmarksDetector.swift in Sources */,
 				B8EF4D3422583F2600F43166 /* TrainingValues.swift in Sources */,
 				B8EF4D2C225830D600F43166 /* Character+ASCII.swift in Sources */,
+				B8C4AED3225CC58400DF3300 /* Float+Operators.swift in Sources */,
 				B8EF4D2022582E2600F43166 /* String+Color.swift in Sources */,
 				B8EF4D2622582FE100F43166 /* DeviceInformation.swift in Sources */,
 				B8264A7F2257DDDF00C4C48E /* UIImage+Scale.swift in Sources */,
 				B8EF4D1E22582CF200F43166 /* SettingsViewController.swift in Sources */,
+				B8C4AED5225CC5CA00DF3300 /* CGPoint+Midpoint.swift in Sources */,
 				B8EF4D2A225830CB00F43166 /* StringProtocol+ASCII.swift in Sources */,
 				B8EF4D2222582E5600F43166 /* WebViewController.swift in Sources */,
 				B8C4AECF225B9F4200DF3300 /* CGFloat+Rounded.swift in Sources */,
