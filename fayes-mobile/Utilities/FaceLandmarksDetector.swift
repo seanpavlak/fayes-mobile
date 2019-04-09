@@ -5,6 +5,7 @@
 
 import UIKit
 import Vision
+import ChameleonFramework
 
 class FaceLandmarksDetector {
 
@@ -87,12 +88,6 @@ class FaceLandmarksDetector {
         let rect = CGRect(x: 0, y:0, width: source.size.width, height: source.size.height)
         context.draw(source.cgImage!, in: rect)
 
-
-        //draw bound rect
-        context.setStrokeColor(UIColor.green.cgColor)
-        context.addRect(CGRect(x: boundingRect.origin.x * source.size.width, y:boundingRect.origin.y * source.size.height, width: rectWidth, height: rectHeight))
-        context.drawPath(using: CGPathDrawingMode.stroke)
-
         //draw overlay
         context.setLineWidth(1.0)
 
@@ -102,7 +97,7 @@ class FaceLandmarksDetector {
             for point in feature.normalizedPoints {
                 // Draw DEBUG numbers
                 let textFontAttributes = [
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
                     NSAttributedString.Key.foregroundColor: UIColor.white
                 ]
                 context.saveGState()
@@ -125,27 +120,27 @@ class FaceLandmarksDetector {
         }
         
         if let faceContour = faceLandmarks.faceContour {
-            drawFeature(faceContour, color: UIColor.magenta.cgColor)
+            drawFeature(faceContour, color: UIColor.flatSand.cgColor)
         }
 
         if let leftEye = faceLandmarks.leftEye {
-            drawFeature(leftEye, color: UIColor.cyan.cgColor, close: true)
+            drawFeature(leftEye, color: UIColor.flatBlue.cgColor, close: true)
         }
         if let rightEye = faceLandmarks.rightEye {
-            drawFeature(rightEye, color: UIColor.cyan.cgColor, close: true)
+            drawFeature(rightEye, color: UIColor.flatBlue.cgColor, close: true)
         }
         if let leftPupil = faceLandmarks.leftPupil {
-            drawFeature(leftPupil, color: UIColor.cyan.cgColor, close: true)
+            drawFeature(leftPupil, color: UIColor.flatSkyBlue.cgColor, close: true)
         }
         if let rightPupil = faceLandmarks.rightPupil {
-            drawFeature(rightPupil, color: UIColor.cyan.cgColor, close: true)
+            drawFeature(rightPupil, color: UIColor.flatSkyBlue.cgColor, close: true)
         }
 
         if let nose = faceLandmarks.nose {
-            drawFeature(nose, color: UIColor.green.cgColor)
+            drawFeature(nose, color: UIColor.flatMint.cgColor)
         }
         if let noseCrest = faceLandmarks.noseCrest {
-            drawFeature(noseCrest, color: UIColor.green.cgColor)
+            drawFeature(noseCrest, color: UIColor.flatTeal.cgColor)
         }
 
         if let medianLine = faceLandmarks.medianLine {
@@ -153,17 +148,17 @@ class FaceLandmarksDetector {
         }
 
         if let outerLips = faceLandmarks.outerLips {
-            drawFeature(outerLips, color: UIColor.red.cgColor, close: true)
+            drawFeature(outerLips, color: UIColor.flatGreen.cgColor, close: true)
         }
         if let innerLips = faceLandmarks.innerLips {
-            drawFeature(innerLips, color: UIColor.red.cgColor, close: true)
+            drawFeature(innerLips, color: UIColor.flatGreen.cgColor, close: true)
         }
 
         if let leftEyebrow = faceLandmarks.leftEyebrow {
-            drawFeature(leftEyebrow, color: UIColor.blue.cgColor)
+            drawFeature(leftEyebrow, color: UIColor.flatPlum.cgColor)
         }
         if let rightEyebrow = faceLandmarks.rightEyebrow {
-            drawFeature(rightEyebrow, color: UIColor.blue.cgColor)
+            drawFeature(rightEyebrow, color: UIColor.flatPlum.cgColor)
         }
 
         let coloredImg : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
