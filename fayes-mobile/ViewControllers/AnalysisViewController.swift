@@ -9,6 +9,9 @@ import ChameleonFramework
 
 public class AnalysisViewController: AloeStackViewController {
     var features: features?
+    var masculineProbabilities: [Float] = []
+    var feminineProbabilities: [Float] = []
+
     var arrangedViews: [UIView] = []
     
     public override func viewDidLoad() {
@@ -38,6 +41,7 @@ public class AnalysisViewController: AloeStackViewController {
         getFeatureDistance()
         getFeatureRatio()
         getFeatureComparison()
+        getFeatureProbabilities()
     }
     
     private func getFeatureDistance() {
@@ -75,7 +79,59 @@ public class AnalysisViewController: AloeStackViewController {
         features?.lemCemRatioAbove = lemCemRatio >= NBTrainingData.LemCem.average
         features?.remCemRatioAbove = remCemRatio >= NBTrainingData.RemCem.average
     }
+    
+    private func getFeatureProbabilities() {
+        guard let lereCemRatioAbove = features?.lereCemRatioAbove else { return }
+        guard let lemRemRatioAbove = features?.lemRemRatioAbove else { return }
+        guard let lemCemRatioAbove = features?.lemCemRatioAbove else { return }
+        guard let remCemRatioAbove = features?.remCemRatioAbove else { return }
+        
+        if lereCemRatioAbove {
+            masculineProbabilities.append(NBTrainingData.LereCem.Masculine.above)
+            feminineProbabilities.append(NBTrainingData.LereCem.Feminine.above)
+        } else {
+            masculineProbabilities.append(NBTrainingData.LereCem.Masculine.below)
+            feminineProbabilities.append(NBTrainingData.LereCem.Feminine.below)
+        }
+        
+        if lemRemRatioAbove {
+            masculineProbabilities.append(NBTrainingData.LemRem.Masculine.above)
+            feminineProbabilities.append(NBTrainingData.LemRem.Feminine.above)
+        } else {
+            masculineProbabilities.append(NBTrainingData.LemRem.Masculine.below)
+            feminineProbabilities.append(NBTrainingData.LemRem.Feminine.below)
+        }
 
+        if lemCemRatioAbove {
+            masculineProbabilities.append(NBTrainingData.LemCem.Masculine.above)
+            feminineProbabilities.append(NBTrainingData.LemCem.Feminine.above)
+        } else {
+            masculineProbabilities.append(NBTrainingData.LemCem.Masculine.below)
+            feminineProbabilities.append(NBTrainingData.LemCem.Feminine.below)
+        }
+
+        if remCemRatioAbove {
+            masculineProbabilities.append(NBTrainingData.RemCem.Masculine.above)
+            feminineProbabilities.append(NBTrainingData.RemCem.Feminine.above)
+        } else {
+            masculineProbabilities.append(NBTrainingData.RemCem.Masculine.below)
+            feminineProbabilities.append(NBTrainingData.RemCem.Feminine.below)
+        }
+        
+        var masculineProbability: Float = 1.0
+        var feminineProbability: Float = 1.0
+
+        for probability in masculineProbabilities {
+            masculineProbability *= probability
+        }
+        
+        for probability in feminineProbabilities {
+            feminineProbability *= probability
+        }
+        
+        features?.masculineFeaturePercentage = (masculineProbability)/(masculineProbability + feminineProbability) * 100
+        features?.feminineFeaturePercentage = (feminineProbability)/(masculineProbability + feminineProbability) * 100
+    }
     
     private func setupSelf() {
         definesPresentationContext = true
@@ -107,18 +163,18 @@ public class AnalysisViewController: AloeStackViewController {
         
         setupSpacerView(ofHeight: 18.0)
 
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-masculine"), color: .flatPowderBlueDark, value: "Masculine Percentage", subValue: "0.0%")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-feminine"), color: .flatPink, value: "Feminine Percentage", subValue: "0.0%", isLast: true)
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-masculine"), color: .flatPowderBlueDark, value: "Masculine Features", subValue: "\(features?.masculineFeaturePercentage.rounded(to: 2) ?? "0.00")%")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-feminine"), color: .flatPink, value: "Feminine Features", subValue: "\(features?.feminineFeaturePercentage.rounded(to: 2) ?? "0.00")%", isLast: true)
 
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE"), color: .flatRed, value: "LERE Distance", subValue: "\(features?.lereDistance?.rounded(to: 2) ?? "0.00") dpi")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM"), color: .flatOrange, value: "LEM Distance", subValue: "\(features?.lemDistance?.rounded(to: 2) ?? "0.00") dpi")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM"), color: .flatYellow, value: "REM Distance", subValue: "\(features?.remDistance?.rounded(to: 2) ?? "0.00") dpi")
         setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-CEM"), color: .flatLime, value: "CEM Distance", subValue: "\(features?.cemDistance?.rounded(to: 2) ?? "0.00") dpi", isLast: true)
         
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE_CEM"), color: .flatGreen, value: "LERE - CEM Ratio", subValue: "\(features?.lereCemRatio?.rounded(to: 3) ?? "0.000")")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_REM"), color: .flatMint, value: "LEM - REM Ratio", subValue: "\(features?.lemRemRatio?.rounded(to: 3) ?? "0.000")")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_CEM"), color: .flatBlue, value: "LEM - CEM Ratio", subValue: "\(features?.lemCemRatio?.rounded(to: 3) ?? "0.000")")
-        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM_CEM"), color: .flatPurpleDark, value: "REM - CEM Ratio", subValue: "\(features?.remCemRatio?.rounded(to: 3) ?? "0.000")", isLast: true)
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LERE_CEM"), color: .flatGreen, value: "LERE:CEM", subValue: "\(features?.lereCemRatio?.rounded(to: 3) ?? "0.000")")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_REM"), color: .flatMint, value: "LEM:REM", subValue: "\(features?.lemRemRatio?.rounded(to: 3) ?? "0.000")")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-LEM_CEM"), color: .flatBlue, value: "LEM:CEM", subValue: "\(features?.lemCemRatio?.rounded(to: 3) ?? "0.000")")
+        setupNavigationRow(icon: #imageLiteral(resourceName: "fayes-REM_CEM"), color: .flatPurpleDark, value: "REM:CEM", subValue: "\(features?.remCemRatio?.rounded(to: 3) ?? "0.000")", isLast: true)
     }
     
     private func setupEmojiView() {
@@ -137,7 +193,7 @@ public class AnalysisViewController: AloeStackViewController {
             label.numberOfLines = 1
             label.textAlignment = .right
             label.text = "👦🏽"
-            label.alpha = 0.33
+            label.alpha = Double(features?.masculineFeaturePercentage ?? 0.0) > Double(features?.feminineFeaturePercentage ?? 0.0) ? 1.00 : 0.33
 
             return label
         }()
@@ -150,8 +206,7 @@ public class AnalysisViewController: AloeStackViewController {
             label.numberOfLines = 1
             label.textAlignment = .left
             label.text = "👧🏽"
-            label.alpha = 0.33
-            
+            label.alpha = Double(features?.masculineFeaturePercentage ?? 0.0) < Double(features?.feminineFeaturePercentage ?? 0.0) ? 1.00 : 0.33
             return label
         }()
 

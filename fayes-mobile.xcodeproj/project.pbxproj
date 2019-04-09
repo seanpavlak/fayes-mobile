@@ -12,7 +12,8 @@
 		B8264A7D2257DDB000C4C48E /* FaceLandmarksDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */; };
 		B8264A7F2257DDDF00C4C48E /* UIImage+Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */; };
 		B8264A812257DDFF00C4C48E /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8264A802257DDFF00C4C48E /* CaptureViewController.swift */; };
-		B8C4AECF225B9F4200DF3300 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AECE225B9F4200DF3300 /* Double+Rounded.swift */; };
+		B8C4AECF225B9F4200DF3300 /* CGFloat+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AECE225B9F4200DF3300 /* CGFloat+Rounded.swift */; };
+		B8C4AED1225BE10500DF3300 /* Float+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4AED0225BE10500DF3300 /* Float+Rounded.swift */; };
 		B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */; };
 		B8D3E43E2257B60000D0B7F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */; };
 		B8D3E44F2257B72500D0B7F6 /* LaunchImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D3E44E2257B72500D0B7F6 /* LaunchImage.xib */; };
@@ -36,7 +37,8 @@
 		B8264A7C2257DDB000C4C48E /* FaceLandmarksDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceLandmarksDetector.swift; sourceTree = "<group>"; };
 		B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Scale.swift"; sourceTree = "<group>"; };
 		B8264A802257DDFF00C4C48E /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
-		B8C4AECE225B9F4200DF3300 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
+		B8C4AECE225B9F4200DF3300 /* CGFloat+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Rounded.swift"; sourceTree = "<group>"; };
+		B8C4AED0225BE10500DF3300 /* Float+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounded.swift"; sourceTree = "<group>"; };
 		B8D3E4332257B5FF00D0B7F6 /* fayes-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fayes-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D3E4362257B5FF00D0B7F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8D3E43D2257B60000D0B7F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +132,8 @@
 				B8EF4D29225830CB00F43166 /* StringProtocol+ASCII.swift */,
 				B8EF4D2322582EB800F43166 /* UIColor+Hex.swift */,
 				B8264A7E2257DDDF00C4C48E /* UIImage+Scale.swift */,
-				B8C4AECE225B9F4200DF3300 /* Double+Rounded.swift */,
+				B8C4AECE225B9F4200DF3300 /* CGFloat+Rounded.swift */,
+				B8C4AED0225BE10500DF3300 /* Float+Rounded.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C4AED1225BE10500DF3300 /* Float+Rounded.swift in Sources */,
 				B8EF4D2E225830EC00F43166 /* String+Substring.swift in Sources */,
 				B8EF4D28225830A700F43166 /* Int+Color.swift in Sources */,
 				B8D3E4372257B5FF00D0B7F6 /* AppDelegate.swift in Sources */,
@@ -324,7 +328,7 @@
 				B8EF4D1E22582CF200F43166 /* SettingsViewController.swift in Sources */,
 				B8EF4D2A225830CB00F43166 /* StringProtocol+ASCII.swift in Sources */,
 				B8EF4D2222582E5600F43166 /* WebViewController.swift in Sources */,
-				B8C4AECF225B9F4200DF3300 /* Double+Rounded.swift in Sources */,
+				B8C4AECF225B9F4200DF3300 /* CGFloat+Rounded.swift in Sources */,
 				B8EF4D3022583A0500F43166 /* AnalysisViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

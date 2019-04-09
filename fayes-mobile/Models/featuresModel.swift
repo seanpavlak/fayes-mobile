@@ -27,6 +27,6 @@ struct features {
     var lemCemRatioAbove: Bool?
     var remCemRatioAbove: Bool?
 
-    var malePercentage: Float = 0.0
-    var femalePercentage: Float = 0.0
+    var masculineFeaturePercentage: Float = 0.0
+    var feminineFeaturePercentage: Float = 0.0
 }

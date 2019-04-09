@@ -1,5 +1,5 @@
 //
-//  Double+Rounded.swift
+//  Float+Rounded.swift
 //  fayes-mobile
 //
 //  Created by Sean Pavlak on 4/8/19.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-extension CGFloat {
+extension Float {
     func rounded(to places: Int) -> String {
         return String(format: "%.\(places)f", self)
     }
 }
+
