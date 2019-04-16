@@ -7,6 +7,14 @@ In my investigation, I applied learning techniques to data collected by Apple’
 
 > WIP: Extending these points to the full potential of the Vision framework; hopefully, this application will be able to increase in accuracy and precision.
 
+## Tech Stack:
+* Swift 5
+* Cocoapods
+* AloeStackView
+* [ChameleonFramework/Swift](https://github.com/ViccAlexander/Chameleon.git)
+* Device
+* KeychainSwift
+* NVActivityIndicatorView
 
 ## Methods and Data:
 In order to use the Naive Bayes Classifier, it is first necessary to have a large training set so that the program can determine what traits are more significant and which class contains this data more often. So to develope my training set, I first started with 100 head on images of random human faces, 50% male and 50% female.
