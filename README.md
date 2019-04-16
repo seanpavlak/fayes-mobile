@@ -148,3 +148,39 @@ From equation 2 we can make some reductions to simplify our calculations. p(C_k)
 
 ![p(C_{k}|x) = p(x|C_{k})](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28x%7CC_%7Bk%7D%29%0A%5Cnocache)
 
+Once I had all 100 subjects ratio data charts build I was able to determine the values to input into equation 3 for the male and female class. Whichever value is higher determines which class the face most likely belongs.
+
+| LE-RE:ME-M | Above Count | Below Count | LE-RE:ME-M | Above Count | Below Count |
+|------------|-------------|-------------|------------|-------------|-------------|
+| Female     | 0.6         | 0.4         | Female     | 0.6         | 0.4         |
+| Male       | 0.38        | 0.62        | Male       | 0.38        | 0.62        |
+
+| LE-M:RE-M | Above Count | Below Count | LE-M:RE-M | Above Count | Below Count |
+|-----------|-------------|-------------|-----------|-------------|-------------|
+| Female    | 0.52        | 0.48        | Female    | 0.52        | 0.48        |
+| Male      | 0.44        | 0.56        | Male      | 0.44        | 0.56        |
+
+| LE-M:ME-M | Above Count | Below Count | LE-M:ME-M | Above Count | Below Count |
+|-----------|-------------|-------------|-----------|-------------|-------------|
+| Female    | 0.58        | 0.42        | Female    | 0.58        | 0.42        |
+| Male      | 0.52        | 0.48        | Male      | 0.52        | 0.48        |
+
+| RE-M:ME-M | Above Count | Below Count | RE-M:ME-M | Above Count | Below Count |
+|-----------|-------------|-------------|-----------|-------------|-------------|
+| Female    | 0.64        | 0.36        | Female    | 0.64        | 0.36        |
+| Male      | 0.56        | 0.44        | Male      | 0.56        | 0.44        |
+
+The program I developed to implement this method is in the form of an iPhone application. The application on startup presents a front camera stream and a face detection indicator. If the application finds a face in the stream the indicator’s opacity is set to 1.0. As shown in figure 3.
+
+On tap the stream stops and the image pulled is analyzed by Apple’s CoreImage framework and the eyes and mouth locations are recorded. These points then undergo the same Delaunay Triangulation and distance collection as I performed in designing the training set.
+
+Once the distances are collected, the application finds the necessary 4 ratios, compares them the the ratio averages, and runs equation 3 with the data from table 5. This then produces two values, belonging to the male class and female class.
+
+On completion of the machine learning algorithm, the application compares the male and female class values and selects the larger value, displaying a male or female indicator in the top left over the face indicator. This data is then passed to the second view in the application where all the collected data is displayed. As shown in figures 3 and 4.
+
+This algorithm’s runtime is negligible, and the whole process is very organic and smooth. This showed me that we were able to perform a gender detection within milliseconds with decent results.
+
+## Conclusion:
+Upon analysis of the training set, we were able to achieve a male success rate of 64% and a female success rate of 58%. This gave an average success rate of 62% which is much lower than the theoretical 85%, but this algorithm only took 4 points and all of the ratios had at best a 2% change.
+
+If we also used the face height and width, there are 3 additional ratios with a percent difference greater than 4.5%. This means that I would be able to increase my success rate by about 10 - 15%, this would bring our average success rate to about 75%. Which is impressive given the speed of the algorithm.
