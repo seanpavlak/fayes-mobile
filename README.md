@@ -146,5 +146,5 @@ Figure 2: Machine learning accuracies for gender detection found by the Internat
 
 From equation 2 we can make some reductions to simplify our calculations. p(C_k) in both female and male classes is 0.5, so this can be removed. Also p(x) in both cases is equal, and we intend to compare male to female so this scalar multiple will inevitably be canceled. So our formula is as follows
 
-
+![p(C_{k}|x) = p(x|C_{k})](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28x%7CC_%7Bk%7D%29%0A%5Cnocache)
 
