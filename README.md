@@ -3,7 +3,9 @@ Naive Bayes Facial Feature Analysis Application
 
 
 ## Abstract:
-In my investigation, I applied learning techniques to data collected by Apple’s CoreImage facial detection. CoreImage was able to detect 3 facial feature coordinates, and I translated those coordinates into distances after performing appropriate triangulation methods. Then these distances were able to yield their appropriate ratios. These ratios were then compared to the training set. The machine learning algorithm that I applied was the Naive Bayes Classifier, and I was able to successfully predict the gender of a user with an accuracy of 62% from only 4 ratios.
+In my investigation, I applied learning techniques to data collected by Apple’s ~~CoreImage~~ Vision framework. ~~CoreImage was able to detect 3 facial feature coordinates~~ Vision was able to detect 80 facial features (to remain consistent with Fayes origin I selected only the points CoreImage had access too), and I translated those coordinates into distances after performing appropriate triangulation methods. Then these distances were able to yield their appropriate ratios. These ratios were then compared to the training set. The machine learning algorithm that I applied was the Naive Bayes Classifier, and I was able to successfully predict the gender of a user with an accuracy of 62% from only those 4 ratios. 
+
+> WIP: Extending these points to the full potential of the Vision framework; hopefully, this application will be able to increase in accuracy and precision.
 
 
 ## Methods and Data:
@@ -59,24 +61,32 @@ After I was able to apply Delaunay Triangulation to each of the 100 faces I then
 I was able to calculate the four distinct distance fields: distance from left eye to right eye, distance from left eye to the center of the mouth, the distance from the right eye to the mouth, and the distance from the midpoint between the eye to the center of the mouth. Once all 100 distances were calculated I needed to establish the ratios between these distances. I found the ratios between all the distances, this gave 6 ratio fields. For the sake of efficiency I reduced that set down to the best 4.
 I was able to determine the better and worse ratios by first calculating the female, male, and total average value for each ratio field. I then calculated the difference between the male and female average, and then divided that range by the average. As shown in equation 1 and table 2.
 
-![f_{Range:Average}(x) = \frac{(\bar{x}_{F}-\bar{x}_{M})}{\bar{x}_{Total}}](http://mathurl.com/render.cgi?f_%7BRange%3AAverage%7D%28x%29%20%3D%20%5Cfrac%7B%28%5Cbar%7Bx%7D_%7BF%7D-%5Cbar%7Bx%7D_%7BM%7D%29%7D%7B%5Cbar%7Bx%7D_%7BTotal%7D%7D%5Cnocache)
-###### (1)
+###### (1) ![f_{Range:Average}(x) = \frac{(\bar{x}_{F}-\bar{x}_{M})}{\bar{x}_{Total}}](http://mathurl.com/render.cgi?f_%7BRange%3AAverage%7D%28x%29%20%3D%20%5Cfrac%7B%28%5Cbar%7Bx%7D_%7BF%7D-%5Cbar%7Bx%7D_%7BM%7D%29%7D%7B%5Cbar%7Bx%7D_%7BTotal%7D%7D%5Cnocache)
 
+###### Female Average
 | LE-RE:ME-M     | LE-M:RE-M      | LE-M:ME-M      | RE-M:ME-M      |
 |----------------|----------------|----------------|----------------|
-| Female Average | Female Average | Female Average | Female Average |
 | 0.8923         | 0.9957         | 1.0871         | 1.0921         |
-|                |                |                |                |
-| Male Average   | Male Average   | Male Average   | Male Average   |
+
+###### Male Average
+| LE-RE:ME-M     | LE-M:RE-M      | LE-M:ME-M      | RE-M:ME-M      |
+|----------------|----------------|----------------|----------------|
 | 0.8724         | 0.9980         | 1.0691         | 1.0713         |
-|                |                |                |                |
+
+###### Total Average
+| LE-RE:ME-M     | LE-M:RE-M      | LE-M:ME-M      | RE-M:ME-M      |
+|----------------|----------------|----------------|----------------|
 | Total Average  | Total Average  | Total Average  | Total Average  |
 | 0.8824         | 0.9968         | 1.0781         | 1.0817         |
-|                |                |                |                |
-| Range          | Range          | Range          | Range          |
+
+###### Range
+| LE-RE:ME-M     | LE-M:RE-M      | LE-M:ME-M      | RE-M:ME-M      |
+|----------------|----------------|----------------|----------------|
 | 0.0199         | 0.0023         | 0.0180         | 0.0208         |
-|                |                |                |                |
-| Range:Average  | Range:Average  | Range:Average  | Range:Average  |
+
+###### Range:Average
+| LE-RE:ME-M     | LE-M:RE-M      | LE-M:ME-M      | RE-M:ME-M      |
+|----------------|----------------|----------------|----------------|
 | 0.0226         | 0.0023         | 0.0167         | 0.0192         |
 
 ###### Table 2: Significance chart showing the best of the 6 measured ratios.
@@ -143,13 +153,11 @@ Based on the data collected the best algorithm to implement would be the Naive B
 
 ###### Figure 2: Machine learning accuracies for gender detection found by the International Journal of Applications Vol 124 No. 6
 
-![p(C_{k}|x) = p(C_{k})p(x|C_{k})p(x)^{-1}](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28C_%7Bk%7D%29p%28x%7CC_%7Bk%7D%29p%28x%29%5E%7B-1%7D%0A%5Cnocache)
-###### (2)
+###### (2) ![p(C_{k}|x) = p(C_{k})p(x|C_{k})p(x)^{-1}](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28C_%7Bk%7D%29p%28x%7CC_%7Bk%7D%29p%28x%29%5E%7B-1%7D%0A%5Cnocache)
 
 From equation 2 we can make some reductions to simplify our calculations. p(C_k) in both female and male classes is 0.5, so this can be removed. Also p(x) in both cases is equal, and we intend to compare male to female so this scalar multiple will inevitably be canceled. So our formula is as follows
 
-![p(C_{k}|x) = p(x|C_{k})](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28x%7CC_%7Bk%7D%29%0A%5Cnocache)
-###### (3)
+###### (3) ![p(C_{k}|x) = p(x|C_{k})](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28x%7CC_%7Bk%7D%29%0A%5Cnocache)
 
 Once I had all 100 subjects ratio data charts build I was able to determine the values to input into equation 3 for the male and female class. Whichever value is higher determines which class the face most likely belongs.
 
