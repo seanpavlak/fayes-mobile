@@ -78,3 +78,73 @@ I was able to determine the better and worse ratios by first calculating the fem
 | Range:Average  | Range:Average  | Range:Average  | Range:Average  |
 | 0.0226         | 0.0023         | 0.0167         | 0.0192         |
 
+Table 2: Significance chart showing the best of the 6 measured ratios.
+
+Even after selecting the optimal ratios, the available ratios only support a 1.7 % ­ 2.3 % change between male and female. However when all four are applied to a learning algorithm we are able to achieve a much higher percent range between our two classes.
+
+From the total average we were able to construct a chart that plotted each range and whether each face scored above or below average, table 3 and 4 show the first 20 females and last 20 males data chart respectively.
+
+| Count | Gender | LE-RE:ME-M | LE-M:RE-M | LE-M:ME-M | RE-M:ME-M |
+|-------|--------|------------|-----------|-----------|-----------|
+| 1     | Female | Above      | Below     | Above     | Above     |
+| 2     | Female | Above      | Below     | Above     | Above     |
+| 3     | Female | Above      | Above     | Above     | Above     |
+| 4     | Female | Above      | Above     | Above     | Below     |
+| 5     | Female | Above      | Below     | Above     | Above     |
+| 6     | Female | Above      | Below     | Above     | Above     |
+| 7     | Female | Below      | Below     | Below     | Above     |
+| 8     | Female | Above      | Above     | Above     | Above     |
+| 9     | Female | Above      | Above     | Above     | Above     |
+| 10    | Female | Above      | Below     | Above     | Above     |
+| 11    | Female | Above      | Above     | Above     | Above     |
+| 12    | Female | Above      | Below     | Below     | Below     |
+| 13    | Female | Below      | Above     | Above     | Above     |
+| 14    | Female | Above      | Below     | Below     | Above     |
+| 15    | Female | Above      | Below     | Below     | Above     |
+| 16    | Female | Above      | Above     | Above     | Below     |
+| 17    | Female | Above      | Above     | Above     | Above     |
+| 18    | Female | Below      | Above     | Below     | Below     |
+| 19    | Female | Below      | Above     | Below     | Below     |
+| 20    | Female | Below      | Below     | Below     | Above     |
+| 21    | Female | Above      | Below     | Above     | Above     |
+
+Table 3: Naive Bayes Classifier chart for females
+
+| Count | Gender | LE-RE:ME-M | LE-M:RE-M | LE-M:ME-M | RE-M:ME-M |
+|-------|--------|------------|-----------|-----------|-----------|
+| 51    | Male   | Above      | Below     | Above     | Above     |
+| 52    | Male   | Above      | Below     | Above     | Above     |
+| 53    | Male   | Above      | Above     | Above     | Above     |
+| 54    | Male   | Above      | Above     | Above     | Below     |
+| 55    | Male   | Above      | Below     | Above     | Above     |
+| 56    | Male   | Above      | Below     | Above     | Above     |
+| 57    | Male   | Below      | Below     | Below     | Above     |
+| 58    | Male   | Above      | Above     | Above     | Above     |
+| 59    | Male   | Above      | Above     | Above     | Above     |
+| 60    | Male   | Above      | Below     | Above     | Above     |
+| 61    | Male   | Above      | Above     | Above     | Above     |
+| 62    | Male   | Above      | Below     | Below     | Below     |
+| 63    | Male   | Below      | Above     | Above     | Above     |
+| 64    | Male   | Above      | Below     | Below     | Above     |
+| 65    | Male   | Above      | Below     | Below     | Above     |
+| 66    | Male   | Above      | Above     | Above     | Below     |
+| 67    | Male   | Above      | Above     | Above     | Above     |
+| 68    | Male   | Below      | Above     | Below     | Below     |
+| 69    | Male   | Below      | Above     | Below     | Below     |
+| 70    | Male   | Below      | Below     | Below     | Above     |
+| 71    | Male   | Above      | Below     | Above     | Above     |
+
+Table 4: Naive Bayes Classifier chart for males
+
+Based on the data collected the best algorithm to implement would be the Naive Bayes Classifier, which in other reports showed to have an 84.7475%. This algorithm seemed optimal because it is able to perform with very little execution time and can achieve a high accuracy.
+
+![Machine learning accuracies for gender detection found by the International Journal of Applications Vol 124 No. 6](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJEwDfbGopdwE3zlcexClD4sSHWsWn7fWI85bDwU2Z3axSd3Zrg)
+
+Figure 2: Machine learning accuracies for gender detection found by the International Journal of Applications Vol 124 No. 6
+
+![p(C_{k}|x) = p(C_{k})p(x|C_{k})p(x)^{-1}](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28C_%7Bk%7D%29p%28x%7CC_%7Bk%7D%29p%28x%29%5E%7B-1%7D%0A%5Cnocache)
+
+From equation 2 we can make some reductions to simplify our calculations. p(C_k) in both female and male classes is 0.5, so this can be removed. Also p(x) in both cases is equal, and we intend to compare male to female so this scalar multiple will inevitably be canceled. So our formula is as follows
+
+
+
