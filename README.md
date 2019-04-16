@@ -17,7 +17,7 @@ After I was able to apply Delaunay Triangulation to each of the 100 faces I then
 
 
 ![Example of proper Delaunay Triangulation](https://mathmunch.files.wordpress.com/2013/05/delaunay-triangulation.png)
-Figure 1: Example of proper Delaunay Triangulation.
+###### Figure 1: Example of proper Delaunay Triangulation.
 
 
 
@@ -54,12 +54,13 @@ Figure 1: Example of proper Delaunay Triangulation.
 | 64    | Male   | 63.97  | 85.66  | 85.87  | 77.78  |
 | 65    | Male   | 80.96  | 103.04 | 103.56 | 94.09  |
 
-Table 1: Distance data for the first 15 male and female faces.
+###### Table 1: Distance data for the first 15 male and female faces.
 
 I was able to calculate the four distinct distance fields: distance from left eye to right eye, distance from left eye to the center of the mouth, the distance from the right eye to the mouth, and the distance from the midpoint between the eye to the center of the mouth. Once all 100 distances were calculated I needed to establish the ratios between these distances. I found the ratios between all the distances, this gave 6 ratio fields. For the sake of efficiency I reduced that set down to the best 4.
 I was able to determine the better and worse ratios by first calculating the female, male, and total average value for each ratio field. I then calculated the difference between the male and female average, and then divided that range by the average. As shown in equation 1 and table 2.
 
 ![f_{Range:Average}(x) = \frac{(\bar{x}_{F}-\bar{x}_{M})}{\bar{x}_{Total}}](http://mathurl.com/render.cgi?f_%7BRange%3AAverage%7D%28x%29%20%3D%20%5Cfrac%7B%28%5Cbar%7Bx%7D_%7BF%7D-%5Cbar%7Bx%7D_%7BM%7D%29%7D%7B%5Cbar%7Bx%7D_%7BTotal%7D%7D%5Cnocache)
+###### (1)
 
 | LE-RE:ME-M     | LE-M:RE-M      | LE-M:ME-M      | RE-M:ME-M      |
 |----------------|----------------|----------------|----------------|
@@ -78,9 +79,9 @@ I was able to determine the better and worse ratios by first calculating the fem
 | Range:Average  | Range:Average  | Range:Average  | Range:Average  |
 | 0.0226         | 0.0023         | 0.0167         | 0.0192         |
 
-Table 2: Significance chart showing the best of the 6 measured ratios.
+###### Table 2: Significance chart showing the best of the 6 measured ratios.
 
-Even after selecting the optimal ratios, the available ratios only support a 1.7 % ­ 2.3 % change between male and female. However when all four are applied to a learning algorithm we are able to achieve a much higher percent range between our two classes.
+Even after selecting the optimal ratios, the available ratios only support a 1.7 % - 2.3 % change between male and female. However when all four are applied to a learning algorithm we are able to achieve a much higher percent range between our two classes.
 
 From the total average we were able to construct a chart that plotted each range and whether each face scored above or below average, table 3 and 4 show the first 20 females and last 20 males data chart respectively.
 
@@ -108,7 +109,7 @@ From the total average we were able to construct a chart that plotted each range
 | 20    | Female | Below      | Below     | Below     | Above     |
 | 21    | Female | Above      | Below     | Above     | Above     |
 
-Table 3: Naive Bayes Classifier chart for females
+###### Table 3: Naive Bayes Classifier chart for females
 
 | Count | Gender | LE-RE:ME-M | LE-M:RE-M | LE-M:ME-M | RE-M:ME-M |
 |-------|--------|------------|-----------|-----------|-----------|
@@ -134,19 +135,21 @@ Table 3: Naive Bayes Classifier chart for females
 | 70    | Male   | Below      | Below     | Below     | Above     |
 | 71    | Male   | Above      | Below     | Above     | Above     |
 
-Table 4: Naive Bayes Classifier chart for males
+###### Table 4: Naive Bayes Classifier chart for males
 
 Based on the data collected the best algorithm to implement would be the Naive Bayes Classifier, which in other reports showed to have an 84.7475%. This algorithm seemed optimal because it is able to perform with very little execution time and can achieve a high accuracy.
 
 ![Machine learning accuracies for gender detection found by the International Journal of Applications Vol 124 No. 6](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJEwDfbGopdwE3zlcexClD4sSHWsWn7fWI85bDwU2Z3axSd3Zrg)
 
-Figure 2: Machine learning accuracies for gender detection found by the International Journal of Applications Vol 124 No. 6
+###### Figure 2: Machine learning accuracies for gender detection found by the International Journal of Applications Vol 124 No. 6
 
 ![p(C_{k}|x) = p(C_{k})p(x|C_{k})p(x)^{-1}](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28C_%7Bk%7D%29p%28x%7CC_%7Bk%7D%29p%28x%29%5E%7B-1%7D%0A%5Cnocache)
+###### (2)
 
 From equation 2 we can make some reductions to simplify our calculations. p(C_k) in both female and male classes is 0.5, so this can be removed. Also p(x) in both cases is equal, and we intend to compare male to female so this scalar multiple will inevitably be canceled. So our formula is as follows
 
 ![p(C_{k}|x) = p(x|C_{k})](http://mathurl.com/render.cgi?p%28C_%7Bk%7D%7Cx%29%20%3D%20p%28x%7CC_%7Bk%7D%29%0A%5Cnocache)
+###### (3)
 
 Once I had all 100 subjects ratio data charts build I was able to determine the values to input into equation 3 for the male and female class. Whichever value is higher determines which class the face most likely belongs.
 
@@ -169,6 +172,8 @@ Once I had all 100 subjects ratio data charts build I was able to determine the 
 |-----------|-------------|-------------|-----------|-------------|-------------|
 | Female    | 0.64        | 0.36        | Female    | 0.64        | 0.36        |
 | Male      | 0.56        | 0.44        | Male      | 0.56        | 0.44        |
+
+###### Table 5: Naive Bayes Classifier value chart for male and female
 
 The program I developed to implement this method is in the form of an iPhone application. The application on startup presents a front camera stream and a face detection indicator. If the application finds a face in the stream the indicator’s opacity is set to 1.0. As shown in figure 3.
 
