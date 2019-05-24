@@ -1,4 +1,4 @@
-# fayes-mobile
+# Fayes
 Naive Bayes Facial Feature Analysis Application
 
 
